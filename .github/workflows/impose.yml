@@ -1,0 +1,19 @@
+name: analyse
+
+on:
+  push:
+
+jobs:
+  whisper:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        regularly: ["accumulate", "gum", "ambition", "military", "deserve"]
+        feather: ["enlarge", "extraordinary", "classroom", "therefore"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar FX.jar
